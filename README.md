@@ -27,3 +27,6 @@ THEN I am again presented with current and future conditions for that city
 ### Link to Deployed Page
 
 [Deployed App on Github Pages](https://ldagnese.github.io/weather-dashboard/)
+
+## Link to the Weather API
+[OpenWeatherMap.org](https://openweathermap.org/api/one-call-api)

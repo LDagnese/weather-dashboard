@@ -1,0 +1,33 @@
+:root {
+    --primary-color: #659DBD;
+    --secondary-color: #DAAD86;
+    --tertiary-color: #BC986A;
+    --background-color: #FBEEC1;
+    --accent-color: #8D8741;
+    --off-white: #FFFAF1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--off-white);
+}
+
+.hero {
+    width: 100%;
+    height: 10vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--off-white);
+    line-height: 10vh;
+}
+
+.flex-container {
+    display: flex;
+}
