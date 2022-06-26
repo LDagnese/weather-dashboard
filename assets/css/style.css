@@ -12,6 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     background-color: var(--off-white);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -27,8 +28,7 @@ body {
     text-align: center;
     background-color: var(--primary-color);
     color: whitesmoke;
-    line-height: 8vh;
-    border-bottom-left-radius: 10px;
+    line-height: 75px;
     border-bottom-right-radius: 10px;
 }
 
@@ -41,12 +41,13 @@ body {
     width: 300px;
     margin: 0;
     padding: 0;
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
 }
 
 .form {
     width: 100%;
     background-color: var(--fourth-color);
+    border: 1px solid var(--primary-color);
     border-radius: 10px;
     padding: 5px;
     text-align: center;
@@ -77,11 +78,15 @@ body {
 }
 
 .historical {
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
     text-align: center;
     width: 100%;
     padding: 0;
     margin: 0;
+}
+
+.historical h3 {
+    margin-top: 5px;
 }
 
 .historical ul {
@@ -92,24 +97,52 @@ body {
     padding: 5px;
     border: 1px solid var(--tertiary-color);
     background-color: var(--primary-color);
-    color: var(--font-color);
+    color: whitesmoke;
     border-radius: 10px;
     margin: 10px;
 }
 
-.content{
-    flex: 1 0 auto;
+.current-weather {
+    text-align: left;
+    border: 5px solid var(--secondary-color);
+    background-color: rgba(245, 245, 245, 0.145);
+    margin: 15px;
+    border-radius: 10px;
+    flex:1 0.5 90%;
+}
+
+.current-weather h3,h4 {
+    margin: 10px;
+    padding: 5px;
+}
+
+.card-container {
+    margin: 15px;
+    padding: 10px;
+}
+
+.card-container h3 {
+    margin: 5px;
+}
+
+.row {
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
 }
 
-.current-weather {
-    height: 200px;
-    text-align: left;
-    border: 1px solid var(--secondary-color);
+.card {
     background-color: var(--tertiary-color);
-    color: var(--font-color);
-    margin: 5px;
+    padding: 5px;
+    margin: 20px;
     border-radius: 10px;
-    flex:1 0.5 90%;
+    border: 1px solid var(--primary-color);
+    width: 200px;
+    height: 25%;
+    flex: 0 0 auto;
+    
+}
+
+.card h3 {
+    padding: 5px;
 }
