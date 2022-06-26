@@ -15,11 +15,12 @@
 
 body {
     background-color: var(--off-white);
+    height: 100%;
 }
 
 .hero {
     width: 100%;
-    height: 8vh;
+    height: 75px;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -30,26 +31,24 @@ body {
     border-bottom-right-radius: 10px;
 }
 
-.flex-container {
+.page {
     display: flex;
-    justify-content: left;
+    height: calc(100vh - 75px);
 }
 
 .nav {
-    flex: 30%;
-    display: flex;
-    flex-direction: column;
-    width: 30vh;
+    width: 300px;
+    margin: 0;
+    padding: 0;
 }
 
 .form {
-    width: 300px;
+    width: 100%;
     background-color: var(--secondary-color);
     border-radius: 10px;
-    padding: 25px;
+    padding: 5px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
 }
 
 .form label {
@@ -78,11 +77,12 @@ body {
 .historical {
     background-color: var(--background-color);
     text-align: center;
-    width: 300px
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .historical li {
-    margin: 15px;
     padding: 5px;
     border: 1px solid var(--tertiary-color);
     background-color: var(--primary-color);
@@ -91,7 +91,7 @@ body {
 }
 
 .main-page {
-    width: 70vh;
+    flex: 1 0 auto;
 }
 
 .current-weather {
