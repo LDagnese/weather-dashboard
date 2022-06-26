@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #659DBD;
-    --secondary-color: #DAAD86;
-    --tertiary-color: #BC986A;
-    --background-color: #FBEEC1;
-    --accent-color: #8D8741;
+    --primary-color: #464D77;
+    --secondary-color: #36827F;
+    --tertiary-color: #877666;
+    --background-color: #F9DB6D;
     --off-white: #FFFAF1;
+    --font-color: #f4eded;
 }
 
 * {
@@ -19,15 +19,54 @@ body {
 
 .hero {
     width: 100%;
-    height: 10vh;
+    height: 8vh;
     margin: 0;
     padding: 0;
     text-align: center;
     background-color: var(--primary-color);
     color: var(--off-white);
-    line-height: 10vh;
+    line-height: 8vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .flex-container {
     display: flex;
+}
+
+.nav {
+    flex: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    width: 300px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form label {
+    font-size: 28px;
+    color: var(--off-white);
+}
+
+.form input {
+    background-color: var(--off-white);
+    color: var(--primary-color);
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid --tertiary-color;
+}
+
+.form button {
+    align-self: center;
+    width: 100px;
+    border-radius: 10px;
+    padding: 5px;
 }
