@@ -19,10 +19,10 @@
     <main class="page">
         <div class="nav">
             <!-- submit form -->
-            <form class="form">
+            <form class="form" id="city-search-form">
                 <label for="city">City Search</label></br>
-                <input type="text" placeholder="Enter a City" name="city" id="city-search" class="form-input">
-                <select>
+                <input type="text" placeholder="Enter a City" name="city" id="city-search-city" class="form-input">
+                <select id="city-search-state">
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -75,7 +75,7 @@
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                 </select>
-                <button type="submit">Search</button>
+                <button type="submit" id="city-search">Search</button>
             </form>
             <!-- historical search list-block -->
             <div class="historical">
@@ -87,61 +87,18 @@
                 </ul>
             </div>
         </div>
-        <div class="content">
-            <!-- current-weather div -->
-            <div class="current-weather">
-                <h1>Beaverton</h1>
-                <img src="http://openweathermap.org/img/wn/10d.png" alt="light rain">
-                <h3>Date: 6/25/2022</h3>
-                <h4>Temp: 90 &#8457</h4>
-                <h4>Wind: 6.67 MPH</h4>
-                <h4>Humidity: 46%</h4>
-                <h4>UV Index: .47</h4>
-            </div>
-            <!-- 5 day forecast card flex-container -->
-            <div class="card-container">
-                <h3>5-Day Forecast:</h3>
-                <div class="row">
-                    <div class="card">
-                        <h3>6/26/2022</h3>
-                        <img src="http://openweathermap.org/img/wn/10d.png" alt="light rain">
-                        <h4>Temp: 45 &#8457</h4>
-                        <h4>Wind: 9.53 MPH</h4>
-                        <h4>Humidity: 66%</h4>
-                    </div>
-                    <div class="card">
-                        <h3>6/27/2022</h3>
-                        <img src="http://openweathermap.org/img/wn/10d.png" alt="light rain">
-                        <h4>Temp: 45 &#8457</h4>
-                        <h4>Wind: 9.53 MPH</h4>
-                        <h4>Humidity: 66%</h4>
-                    </div>
-                    <div class="card">
-                        <h3>6/28/2022</h3>
-                        <img src="http://openweathermap.org/img/wn/10d.png" alt="light rain">
-                        <h4>Temp: 45 &#8457</h4>
-                        <h4>Wind: 9.53 MPH</h4>
-                        <h4>Humidity: 66%</h4>
-                    </div>
-                    <div class="card">
-                        <h3>6/29/2022</h3>
-                        <img src="http://openweathermap.org/img/wn/10d.png" alt="light rain">
-                        <h4>Temp: 45 &#8457</h4>
-                        <h4>Wind: 9.53 MPH</h4>
-                        <h4>Humidity: 66%</h4>
-                    </div>
-                    <div class="card">
-                        <h3>6/30/2022</h3>
-                        <img src="http://openweathermap.org/img/wn/10d.png" alt="light rain">
-                        <h4>Temp: 45 &#8457</h4>
-                        <h4>Wind: 9.53 MPH</h4>
-                        <h4>Humidity: 66%</h4>
-                    </div>
-                </div>
-            </div>
-            <!-- each card inside flex-container -->
-        </div>
+        <div class="content"></div>
     </main>
+    <!-- use day.js to easily format dates -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
+        integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js"
+        integrity="sha512-m00bfmYnAl3plEBlQfeQUhw/U2uvmw29V2+jxSWpAjankMWS+zAsjezbKWDEJNXqWq9o9qQZSOiA2RKDpa4D5w=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js"
+        integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg=="
+        crossorigin="anonymous"></script>
     <script src="./assets/js/config.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
