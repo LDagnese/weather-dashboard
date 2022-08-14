@@ -44,7 +44,7 @@ function displayCurrentWeather(city, weather, timezone) {
   let wind = weather.wind_speed;
   let humidity = weather.humidity;
   let uvi = weather.uvi;
-  let icon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+  let icon = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
   let iconAlt = weather.weather[0].description;
 
   let card = document.createElement("div");
@@ -99,7 +99,7 @@ function displayForecast(data, timezone) {
     if (data[i].dt >= startDate && data[i].dt < endDate) {
       // render the card
       let unixTime = data[i].dt;
-      let iconUrl = `http://openweathermap.org/img/wn/${data[i].weather[0].icon}.png`;
+      let iconUrl = `https://openweathermap.org/img/wn/${data[i].weather[0].icon}.png`;
       let iconDescription = data[i].weather[0].description;
       let temp = data[i].temp.day;
       let { humidity } = data[i];
@@ -149,7 +149,7 @@ function citySearchHandler(e) {
 
 // api call handlers
 function getCityLatLon(city, state) {
-  const apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},usa&limit=1&appid=${config.myKey}`;
+  const apiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state},usa&limit=1&appid=${config.myKey}`;
 
   fetch(apiUrl)
     .then((res) => res.json())
@@ -168,7 +168,7 @@ function getCurrentWeather(location) {
   const { lat } = location;
   const { lon } = location;
   const cityState = `${location.name}, ${location.state}`;
-  const apiUrl = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${config.myKey}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${config.myKey}`;
 
   fetch(apiUrl)
     .then((res) => res.json())
