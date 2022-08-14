@@ -1,10 +1,41 @@
 // variable declarations
+let searchHistory = [];
 const citySearch = document.querySelector("#city-search-form");
 const mainContent = document.querySelector(".content");
+const searchHistoryUl = document.querySelector("#search-history");
 
 // Add timezone plugins to day.js
 dayjs.extend(window.dayjs_plugin_utc);
 dayjs.extend(window.dayjs_plugin_timezone);
+
+function displaySearchHistory() {
+  searchHistoryUl.innerHTML = "";
+
+  for (let i = searchHistory.length - 1; i >= 0; i--) {
+    let searchLi = document.createElement("li");
+    searchLi.textContent = searchHistory[i];
+    searchLi.setAttribute("class", "search-item");
+    searchHistoryUl.append(searchLi);
+  }
+}
+
+function appendSearchHistory(citySearch) {
+  if (searchHistory.indexOf(citySearch) !== -1) {
+    return;
+  }
+  searchHistory.push(citySearch);
+
+  localStorage.setItem("search-history", JSON.stringify(searchHistory));
+  displaySearchHistory();
+}
+
+function initializeSearchHistory() {
+  let storedHistory = localStorage.getItem("search-history");
+  if (storedHistory) {
+    searchHistory = JSON.parse(storedHistory);
+  }
+  displaySearchHistory();
+}
 
 function displayCurrentWeather(city, weather, timezone) {
   let date = dayjs().tz(timezone).format("M/D/YYYY");
@@ -98,7 +129,7 @@ function displayForecast(data, timezone) {
     }
   }
 
-  cardContainerEl.append(cardContainerRow)
+  cardContainerEl.append(cardContainerRow);
 }
 
 function citySearchHandler(e) {
@@ -126,7 +157,7 @@ function getCityLatLon(city, state) {
       if (!data[0]) {
         alert("Location was not found!");
       } else {
-        // #TODO add to search history
+        appendSearchHistory(`${city}, ${state}`);
         getCurrentWeather(data[0]);
       }
     })
@@ -151,10 +182,20 @@ function displayAllWeather(city, data) {
 }
 
 // handler for localStorage of past searches
+function searchHistoryClickHandler(event) {
+    if(!event.target.matches(".search-item")) {
+        return;
+    }
 
-// load localStorage searches
-// after everysearch and on load
+    let search = event.target.textContent;
+
+    const searchArr = search.split(", ");
+
+    getCityLatLon(searchArr[0],searchArr[1]);
+}
 
 // load localstorage
+initializeSearchHistory();
 // event listeners
+searchHistoryUl.addEventListener("click", searchHistoryClickHandler);
 citySearch.addEventListener("submit", citySearchHandler);
