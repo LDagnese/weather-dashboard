@@ -113,10 +113,7 @@ function displayForecast(data, timezone) {
       let fcHumidEl = document.createElement("h4");
 
       fcCardEl.setAttribute("class", "card");
-      fcDateEl.textContent = dayjs
-        .unix(unixTime)
-        .tz(timezone)
-        .format("M/D/YYYY");
+      fcDateEl.textContent = dayjs.unix(unixTime).tz(timezone).format("M/D/YYYY");
       fcImgEl.setAttribute("src", iconUrl);
       fcImgEl.setAttribute("alt", iconDescription);
       fcTempEl.textContent = `Temp: ${temp}°F`;
@@ -183,15 +180,15 @@ function displayAllWeather(city, data) {
 
 // handler for localStorage of past searches
 function searchHistoryClickHandler(event) {
-    if(!event.target.matches(".search-item")) {
-        return;
-    }
+  if (!event.target.matches(".search-item")) {
+    return;
+  }
 
-    let search = event.target.textContent;
+  let search = event.target.textContent;
 
-    const searchArr = search.split(", ");
+  const searchArr = search.split(", ");
 
-    getCityLatLon(searchArr[0],searchArr[1]);
+  getCityLatLon(searchArr[0], searchArr[1]);
 }
 
 // load localstorage
